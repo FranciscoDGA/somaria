@@ -1,0 +1,17 @@
+{
+  "name": "Sobraria — a matemática da decisão",
+  "short_name": "Sobraria",
+  "description": "Finanças pessoais em números: vereditos, contas passo a passo e calculadoras.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F0D",
+  "theme_color": "#0B0F0D",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

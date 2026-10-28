@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-0: #0b0f0d;
+  --bg-1: #101613;
+  --bg-2: #17201b;
+  --line: #243129;
+  --ink: #e9efea;
+  --ink-2: #9fb0a5;
+  --green: #4ade80;
+  --green-deep: #166534;
+  --amber: #fbbf24;
+  --red: #f87171;
+
+  /* Canais RGB para os modificadores de opacidade do Tailwind. */
+  --bg-0-rgb: 11 15 13;
+  --bg-1-rgb: 16 22 19;
+  --bg-2-rgb: 23 32 27;
+  --line-rgb: 36 49 41;
+  --ink-rgb: 233 239 234;
+  --ink-2-rgb: 159 176 165;
+  --green-rgb: 74 222 128;
+  --green-deep-rgb: 22 101 52;
+  --amber-rgb: 251 191 36;
+  --red-rgb: 248 113 113;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-0);
+    color: var(--ink);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: rgba(74, 222, 128, 0.25);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-green sm:text-[11px];
+  }
+
+  .card {
+    @apply rounded-card border border-line bg-bg-1;
+  }
+
+  .card-hover {
+    @apply transition-colors duration-200 hover:border-green/40 hover:bg-bg-2/50;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-field px-5 py-3 text-sm font-semibold transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-green text-bg-0 hover:bg-[#6ee7a0] active:scale-[0.99];
+  }
+
+  .btn-ghost {
+    @apply border border-line bg-transparent text-ink hover:border-green/50 hover:text-green;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-xs;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-bg-2/50 px-3 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-ink-2;
+  }
+
+  .field {
+    @apply w-full rounded-field border border-line bg-bg-2 px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink-2/75 focus:border-green/60 focus:ring-1 focus:ring-green/20;
+  }
+
+  .label {
+    @apply mb-2 block text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-2;
+  }
+
+  .num {
+    @apply whitespace-nowrap font-mono font-bold text-green;
+  }
+
+  .link-underline {
+    @apply underline decoration-green/40 underline-offset-4 transition-colors hover:decoration-green;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .hairline {
+    @apply border-t border-line;
+  }
+
+  .skip-link {
+    @apply fixed left-4 top-4 z-[100] -translate-y-24 rounded-field bg-green px-4 py-2 text-sm font-bold text-bg-0 transition-transform focus:translate-y-0;
+  }
+
+  .hero-glow {
+    background:
+      radial-gradient(55% 45% at 50% 0%, rgba(74, 222, 128, 0.09), transparent 70%),
+      radial-gradient(40% 30% at 85% 20%, rgba(22, 101, 52, 0.16), transparent 70%);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(36, 49, 41, 0.45) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(36, 49, 41, 0.45) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Prosa dos artigos (MDX)
+   -------------------------------------------------------------------------- */
+.article-prose {
+  color: var(--ink-2);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.article-prose > * + * {
+  margin-top: 1.35rem;
+}
+
+.article-prose > h2 {
+  margin-top: 3.25rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 100px;
+  color: var(--ink);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.article-prose > h3 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.65rem;
+  scroll-margin-top: 100px;
+  color: var(--ink);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.article-prose > p {
+  color: var(--ink-2);
+}
+
+.article-prose strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.article-prose a {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 222, 128, 0.35);
+  text-underline-offset: 4px;
+}
+
+.article-prose a:hover {
+  text-decoration-color: var(--green);
+}
+
+.article-prose ul {
+  list-style: disc;
+  padding-left: 1.3rem;
+}
+
+.article-prose ol {
+  list-style: decimal;
+  padding-left: 1.3rem;
+}
+
+.article-prose li {
+  margin-top: 0.55rem;
+  padding-left: 0.2rem;
+}
+
+.article-prose li::marker {
+  color: var(--green);
+  font-family: var(--font-mono), monospace;
+}
+
+.article-prose ol.contas {
+  counter-reset: conta;
+  list-style: none;
+  padding-left: 0;
+}
+
+.article-prose ol.contas > li {
+  position: relative;
+  margin-top: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(16, 22, 19, 0.65);
+  padding: 1.15rem 1.25rem 1.15rem 3.4rem;
+  counter-increment: conta;
+}
+
+.article-prose ol.contas > li::marker {
+  content: none;
+}
+
+.article-prose ol.contas > li::before {
+  content: counter(conta, decimal-leading-zero);
+  position: absolute;
+  left: 1.15rem;
+  top: 1.2rem;
+  color: var(--green);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.article-prose blockquote {
+  border-left: 2px solid var(--green);
+  padding-left: 1.25rem;
+  color: var(--ink);
+  font-style: normal;
+}
+
+.article-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.article-prose th {
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.75rem;
+  text-align: left;
+  color: var(--ink-2);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.article-prose td {
+  border-bottom: 1px solid rgba(36, 49, 41, 0.7);
+  padding: 0.7rem 0.75rem;
+  vertical-align: top;
+}
+
+.article-prose tr:last-child td {
+  border-bottom: 0;
+}
+
+.article-prose code {
+  border-radius: 5px;
+  background: var(--bg-2);
+  padding: 0.15rem 0.35rem;
+  color: var(--green);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+}
+
+.article-prose hr {
+  border-color: var(--line);
+}
+
+.article-prose > p:first-of-type {
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+  .article-prose > h2 {
+    font-size: 2rem;
+  }
+
+  .article-prose > h3 {
+    font-size: 1.3rem;
+  }
+
+  .article-prose {
+    font-size: 1.06rem;
+  }
+}
