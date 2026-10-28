@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { copy } from "@/lib/copy";
-import { ArrowRight, Close, Menu } from "./Icons";
+import { ArrowUpRight, Close, Menu } from "./Icons";
 import { Logo } from "./Logo";
 
 export function Header() {
@@ -50,9 +50,9 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Link href="/newsletter" className="btn btn-primary btn-sm">
+          <Link href="/blog" className="btn btn-primary btn-sm">
             {copy.header.cta}
-            <ArrowRight size={14} />
+            <ArrowUpRight size={14} />
           </Link>
         </div>
 
@@ -82,9 +82,9 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/newsletter" className="btn btn-primary mt-4 mb-2">
+            <Link href="/blog" className="btn btn-primary mt-4 mb-2">
               {copy.header.cta}
-              <ArrowRight size={15} />
+              <ArrowUpRight size={15} />
             </Link>
           </nav>
         </div>

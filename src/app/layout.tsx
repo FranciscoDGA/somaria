@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 
 import { AnalyticsGate } from "@/components/AnalyticsGate";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -139,6 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {copy.header.skipToContent}
         </a>
         <JsonLd data={websiteSchema} />
+        <AnnouncementBar />
         <Header />
         <main id="conteudo">{children}</main>
         <Footer />

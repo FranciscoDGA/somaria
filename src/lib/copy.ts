@@ -6,13 +6,17 @@
  */
 export const copy = {
   nav: [
+    { label: "Artigos", href: "/blog" },
     { label: "Vale a pena?", href: "/vale-a-pena" },
     { label: "Calculadoras", href: "/calculadoras" },
-    { label: "Blog", href: "/blog" },
     { label: "Sobre", href: "/sobre" },
   ],
+  announcement: {
+    left: "Educação financeira sem complicação",
+    right: "Decisões melhores começam com números",
+  },
   header: {
-    cta: "Receber a conta",
+    cta: "Ler os artigos",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     skipToContent: "Pular para o conteúdo",
@@ -29,11 +33,11 @@ export const copy = {
     share: "Compartilhar",
   },
   home: {
-    eyebrow: "A matemática da decisão",
-    title: "Quanto sobraria no fim do mês?",
+    eyebrow: "Finanças pessoais, sem achismo",
+    title: "Seu dinheiro merece boas decisões.",
     subtitle:
-      "Toda decisão financeira tem uma conta por trás. A gente faz a conta, mostra o veredito e deixa você testar com os seus números.",
-    primaryCta: "Ver os vereditos",
+      "A gente faz a conta que ninguém faz: juros, prazo, depreciação e custo de oportunidade. Você chega ao veredito com números — e decide com clareza.",
+    primaryCta: "Ler os artigos",
     secondaryCta: "Abrir calculadoras",
     stats: [
       { value: "12", label: "decisões dissecadas" },
@@ -41,44 +45,76 @@ export const copy = {
       { value: "0", label: "achismo" },
     ],
     heroCard: {
-      tag: "Exemplo de veredito",
-      title: "Financiar um carro de R$ 100 mil em 48x",
-      value: "R$ 32.559",
-      label: "em juros, antes da depreciação",
-      link: "Ver a conta",
+      tag: "Simulação · 1% ao mês",
+      title: "Se você guardasse R$ 1.000 por mês",
+      value: "R$ 1.000",
+      label: "por mês, durante 10 anos",
+      link: "Abrir calculadora de juros compostos",
+      hint: "Com juros de 1% ao mês",
+      bars: [
+        { label: "Em 1 ano", value: "R$ 12.720", width: "10%", color: "bg-ink-2/35" },
+        { label: "Em 5 anos", value: "R$ 82.000", width: "42%", color: "bg-green/60" },
+        { label: "Em 10 anos", value: "R$ 204.000", width: "100%", color: "bg-green" },
+      ],
+      floatingTop: "R$ 204.000 em 10 anos",
+      floatingBottom: "+ R$ 1.000 / mês",
     },
-    latest: {
-      eyebrow: "Últimos vereditos",
-      title: "A conta antes da compra",
-      link: "Ver arquivo completo",
-    },
-    popular: {
-      eyebrow: "Mais buscados",
-      title: "As decisões que mais pesam no mês",
-      note: "Doze perguntas que aparecem em quase toda mesa de cozinha — respondidas com números.",
-    },
-    how: {
-      eyebrow: "Como funciona",
-      title: "Pergunta, conta, veredito.",
-      subtitle:
-        "Nada de resposta genérica. Cada artigo parte de uma pergunta concreta e termina com um número que você pode conferir.",
-      steps: [
+    steps: {
+      eyebrow: "O método",
+      title: "Entenda. Calcule. Decida.",
+      items: [
         {
           number: "01",
-          title: "A pergunta exata",
-          text: "“Financiar em 48x ou pagar à vista?” — sem “depende” como resposta final.",
+          title: "Entenda",
+          text: "A pergunta certa, as premissas abertas e o que realmente está em jogo.",
         },
         {
           number: "02",
-          title: "A conta aberta",
-          text: "Taxa, prazo, entrada, rendimento alternativo e depreciação, passo a passo.",
+          title: "Calcule",
+          text: "Juros, prazo, depreciação e custo de oportunidade, passo a passo.",
         },
         {
           number: "03",
-          title: "O veredito",
-          text: "Um número no topo, a conclusão em duas frases e uma calculadora para os seus dados.",
+          title: "Decida",
+          text: "Um veredito claro e uma calculadora para testar com os seus números.",
         },
       ],
+    },
+    latest: {
+      eyebrow: "Vale a pena?",
+      title: "Vale a pena mesmo?",
+      description:
+        "As decisões que mais pesam no orçamento, dissecadas com números reais — do carro financiado ao rotativo do cartão.",
+      link: "Ver todas as decisões",
+    },
+    calculators: {
+      eyebrow: "Calculadoras",
+      title: "Chega de ficar no “eu acho”.",
+      description:
+        "Sete contas abertas para você trocar os números e ver o seu cenário. Sem cadastro, sem planilha, sem pegadinha.",
+      link: "Ver as 7 calculadoras",
+    },
+    blog: {
+      eyebrow: "Blog",
+      title: "A pergunta vem antes da conta.",
+      description:
+        "Orçamento, hábitos e custo de oportunidade: o contexto que transforma um número em decisão.",
+      link: "Ler o blog",
+      quote:
+        "“Quem não sabe quanto custa o próprio mês não consegue dizer o que pode comprar.”",
+      quoteSource: "Redação Sobraria",
+      cardTitle: "Faça perguntas. Entenda os números.",
+      cardText:
+        "Um ensaio curto por semana sobre o que vem antes da planilha: escolhas, hábitos e prioridades.",
+      cardCta: "Explorar os artigos",
+    },
+    cta: {
+      eyebrow: "Comece por uma pergunta",
+      title: "Seu dinheiro. Suas escolhas. Mais clareza.",
+      text: "Escolha uma decisão, abra a conta e veja o que sobra no fim do mês. Sem promessa de enriquecimento, sem atalho.",
+      primary: "Ler os artigos",
+      secondary: "Abrir calculadoras",
+      backToTop: "Voltar ao topo",
     },
     newsletter: {
       eyebrow: "Newsletter",

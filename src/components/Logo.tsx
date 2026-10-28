@@ -33,7 +33,7 @@ export function Logo({ href = "/", className = "", markOnly = false }: LogoProps
       </svg>
       {!markOnly && (
         <span className="font-display text-[1.45rem] font-extrabold lowercase leading-none tracking-[-0.045em] text-ink">
-          sobraria
+          sobraria<span className="text-green">.</span>
         </span>
       )}
     </span>

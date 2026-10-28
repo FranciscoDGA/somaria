@@ -1,16 +1,22 @@
 import Link from "next/link";
-import { calculators, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import { copy } from "@/lib/copy";
 import { Logo } from "./Logo";
 import { ManageCookies } from "./ManageCookies";
 import { ArrowUpRight } from "./Icons";
 
-const exploreLinks = [
+const contentLinks = [
   { label: "Vale a pena?", href: "/vale-a-pena" },
-  { label: "Blog", href: "/blog" },
+  { label: "Artigos", href: "/blog" },
+  { label: "Calculadoras", href: "/calculadoras" },
+  { label: "Newsletter", href: "/newsletter" },
+];
+
+const institutionalLinks = [
   { label: "Sobre", href: "/sobre" },
   { label: "Contato", href: "/contato" },
-  { label: "Newsletter", href: "/newsletter" },
+  { label: "Política editorial", href: "/politica-editorial" },
+  { label: "Termos de uso", href: "/termos-de-uso" },
 ];
 
 export function Footer() {
@@ -19,8 +25,8 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-bg-0">
       <div className="container-page py-14 sm:py-16">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div className="max-w-xs">
+        <div className="grid gap-10 md:grid-cols-[1.6fr_1fr_1fr]">
+          <div className="max-w-sm">
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-ink-2">{copy.footer.tagline}</p>
             <p className="mt-4 text-xs leading-relaxed text-ink-2/75">
@@ -35,21 +41,11 @@ export function Footer() {
             </Link>
           </div>
 
-          <FooterColumn title={copy.footer.exploreTitle} links={exploreLinks} />
-
-          <FooterColumn
-            title={copy.footer.calculatorsTitle}
-            links={calculators.slice(0, 5).map((calculator) => ({
-              label: calculator.short,
-              href: `/calculadoras#${calculator.type}`,
-            }))}
-          />
+          <FooterColumn title="Conteúdo" links={contentLinks} />
 
           <div>
-            <h3 className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-ink-2/75">
-              {copy.footer.legalTitle}
-            </h3>
-            <ul className="mt-4 space-y-2.5">
+            <FooterColumn title="Institucional" links={institutionalLinks} />
+            <ul className="mt-4 space-y-2.5 border-t border-line/60 pt-4">
               <li>
                 <Link
                   href="/politica-de-privacidade"
@@ -81,7 +77,7 @@ export function Footer() {
             <p>
               © {year} {site.name}. {copy.footer.rights}
             </p>
-            <p className="font-mono uppercase tracking-wider">{copy.footer.madeWith}</p>
+            <p className="font-mono uppercase tracking-wider">{site.domain}</p>
           </div>
         </div>
       </div>
